@@ -70,13 +70,13 @@ $(function () {
 
             return $card;
         }
-
-        Card.prototype = {
-            removeCard: function() {
-                this.$element.remove();
-            }
-        };
     }
+
+    Card.prototype = {
+         removeCard: function() {
+            this.$element.remove();
+        }
+    };
 
     var board = {
         name: "Kanban Board",
@@ -104,13 +104,17 @@ $(function () {
         
     var todoColumn = new Column("To do");
     var doingColumn = new Column("Doing");
+    var doneColumn = new Column("Done");
 
     board.addColumn(todoColumn);
     board.addColumn(doingColumn);
+    board.addColumn(doneColumn);
 
     var card1 = new Card("New task");
     var card2 = new Card("Create Kanban board");
+    var card3 = new Card(":)");
 
     todoColumn.addCard(card1);
     doingColumn.addCard(card2);
+    doneColumn.addCard(card3);
 });
